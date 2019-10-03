@@ -1,6 +1,14 @@
-# action.yml
-name: 'Hello World'
-description: 'Greet someone and record the time'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: ./deploy.yml
+    - name: Hello
+      run: echo Hello
+    - name: Deploy
+      run: '${home}/de'
