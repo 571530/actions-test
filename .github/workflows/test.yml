@@ -1,13 +1,6 @@
-name: CI
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Hello
-      run: echo Hello
-    - name: Deploy
-      run: '${home}/deploy.sh'
+# action.yml
+name: 'Hello World'
+description: 'Greet someone and record the time'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
