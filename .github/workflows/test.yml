@@ -11,4 +11,4 @@ jobs:
       uses: actions/checkout@master
     - uses: ./
     - name: Hello
-      uses: 571530/actions-test@v1
+      uses: actions/actions-test@v1
