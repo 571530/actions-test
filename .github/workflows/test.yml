@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: ./
     - name: Hello
-      uses: test-actions/deploy@v1
+      uses: 571530/test-action/deploy@v1
