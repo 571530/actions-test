@@ -11,10 +11,10 @@ jobs:
     - name: Building and deployment
       uses: 571530/actions-test@master
       env: 
-        GITHUB_TOKEN: $GITHUB_TOKEN
+        GITHUB_TOKEN: ${{GITHUB_TOKEN}}
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
         NO_JEKYLL: true
-        BUILD_SCRIPT: mkdir out && echo "<html><body>hei2</body></html>" >> out/index.html
+        BUILD_SCRIPT: mkdir out && echo "<html><body>hei3</body></html>" >> out/index.html
 
