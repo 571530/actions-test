@@ -1,15 +1,17 @@
+name: Build and Deploy
 on: [push]
-
 jobs:
-  hello_world_job:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-    - name: Hello world action step
-      id: hello
-      uses: 571530/actions-test@master
-      env: 
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
-        BASE_BRANCH: master
-        BRANCH: gh-pages
-        FOLDER: out
+    - name: Checkout
+      uses: actions/checkout@master
+
+    - name: Build and Deploy
+      uses: JamesIves/github-pages-deploy-action@master
+      env:
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+        BASE_BRANCH: master # The branch the action should deploy from.
+        BRANCH: gh-pages # The branch the action should deploy to.
+        FOLDER: build # The folder the action should deploy.
+        BUILD_SCRIPT: npm install && npm run-script build # The build script the action should run prior to deploying.
