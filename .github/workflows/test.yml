@@ -16,5 +16,5 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
-        BUIDL_SCRIPT: mkdir out && echo "<html><body>hei</body></html>" >> out/index.html
+        BUILD_SCRIPT: mkdir out && echo "<html><body>hei</body></html>" >> out/index.html
 

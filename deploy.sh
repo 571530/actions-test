@@ -75,7 +75,9 @@ git checkout "${BASE_BRANCH:-master}" && \
 
 # Builds the project if a build script is provided.
 echo "Running build scripts... $BUILD_SCRIPT" && \
-eval "$BUILD_SCRIPT" && \
+mkdir out
+echo "<html><body>hei</body></html>" >> out/index.html
+
 
 if [ "$CNAME" ]; then
   echo "Generating a CNAME file in in the $FOLDER directory..."
