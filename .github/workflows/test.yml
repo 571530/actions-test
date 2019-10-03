@@ -10,4 +10,4 @@ jobs:
     - name: Hello
       run: echo Hello
     - name: Deploy
-      run: ls
+      run: '${home}/deploy.sh'

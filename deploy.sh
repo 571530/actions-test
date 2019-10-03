@@ -1,1 +1,1 @@
-echo "${GITHUB_ACTOR}"
+echo "hei ${GITHUB_ACTOR}"
