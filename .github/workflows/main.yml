@@ -3,18 +3,18 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Building an deployment
     steps:
     - name: Checkout
       uses: actions/checkout@master
 
-    - name: Hello world action step
-      id: hello
+    - name: Building and deployment
       uses: 571530/actions-test@master
       env: 
         ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
+        NO_JEKYLL: true
         BUILD_SCRIPT: mkdir out && echo "<html><body>hei</body></html>" >> out/index.html
 

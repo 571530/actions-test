@@ -1,5 +1,7 @@
 #!/bin/sh -l
 
+# Modified version of https://github.com/JamesIves/github-pages-deploy-action/blob/master/entrypoint.sh
+
 set -e
 
 if [ -z "$ACCESS_TOKEN" ] && [ -z "$GITHUB_TOKEN" ]
@@ -75,13 +77,14 @@ git checkout "${BASE_BRANCH:-master}" && \
 
 # Builds the project if a build script is provided.
 echo "Running build scripts... $BUILD_SCRIPT" && \
-mkdir out
-echo "<html><body>hei</body></html>" >> out/index.html
+eval "$BUILD_SCRIPT"
 
+if [ "$NO_JEKYLL" ]; then
+    touch "${FOLDER}/.nojekyll"
+fi
 
-if [ "$CNAME" ]; then
-  echo "Generating a CNAME file in in the $FOLDER directory..."
-  echo $CNAME > $FOLDER/CNAME
+if [ -f "CNAME" ]; then
+    cp CNAME "${FOLDER}/CNAME"
 fi
 
 # Commits the data to Github.
