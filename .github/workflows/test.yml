@@ -7,4 +7,4 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: 571530/actions-test@v1
+      uses: 571530/actions-test
