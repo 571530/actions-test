@@ -8,3 +8,8 @@ jobs:
     - name: Hello world action step
       id: hello
       uses: 571530/actions-test@master
+      env: 
+        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
+        BASE_BRANCH: master
+        BRANCH: gh-pages
+        FOLDER: out
