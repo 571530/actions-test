@@ -14,6 +14,7 @@ git config --global user.email "${COMMIT_EMAIL}" && \
 git config --global user.name "${COMMIT_NAME}"
 
 REPOSITORY_PATH="https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${GITHUB_REPOSITORY}.git"
+echo "https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.com/${GITHUB_REPOSITORY}.git"
 
 if [ "$(git ls-remote --heads "$REPOSITORY_PATH" "$BRANCH" | wc -l)" -eq 0 ];
 then
@@ -27,7 +28,7 @@ then
 fi
 
 
-git fetch $REPOSITORY_PATH
+git fetch $REPOSITORY_PATH "${BASE_BRANCH:BASE_BRANCH}" 
 git checkout "${BASE_BRANCH}"
 
 echo "Deploying to GitHub..."
