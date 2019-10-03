@@ -7,8 +7,5 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: ./deploy.yml
     - name: Hello
-      run: echo Hello
-    - name: Deploy
-      run: '${home}/de'
+      uses: test-actions/deploy@v1
