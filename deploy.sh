@@ -18,8 +18,6 @@ REPOSITORY_PATH="https://${ACCESS_TOKEN:-"x-access-token:$GITHUB_TOKEN"}@github.
 if [ "$(git ls-remote --heads "$REPOSITORY_PATH" "$BRANCH" | wc -l)" -eq 0 ];
 then
   echo "Creating remote branch ${BRANCH} as it doesn't exist..."
-  git fetch
-  git checkout "${BASE_BRANCH}" && \
   git checkout --orphan $BRANCH && \
   git rm -rf . && \
   touch README.md && \
@@ -28,6 +26,8 @@ then
   git push $REPOSITORY_PATH $BRANCH
 fi
 
+
+git fetch $REPOSITORY_PATH
 git checkout "${BASE_BRANCH}"
 
 echo "Deploying to GitHub..."
