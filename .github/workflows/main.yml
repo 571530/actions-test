@@ -11,7 +11,6 @@ jobs:
     - name: Building and deployment
       uses: 571530/actions-test@master
       env: 
-        ACCESS_TOKEN: ${{secrets.ACCESS_TOKEN}}
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
