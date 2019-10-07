@@ -1,6 +1,0 @@
-# action.yml
-name: 'Build & deploy'
-description: 'Building and deployment'
-runs:
-  using: 'docker'
-  image: 'Dockerfile'
