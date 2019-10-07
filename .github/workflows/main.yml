@@ -12,7 +12,7 @@ jobs:
     - name: Building and deployment
       uses: 571530/actions-test@master
       env: 
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
