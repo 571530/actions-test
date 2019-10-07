@@ -1,3 +1,4 @@
+name: Building and deployment
 on: [push]
 
 jobs:
@@ -16,5 +17,5 @@ jobs:
         BRANCH: gh-pages
         FOLDER: out
         NO_JEKYLL: true
-        BUILD_SCRIPT: mkdir out && echo "<html><body>halla</body></html>" >> out/index.html
+        BUILD_SCRIPT: mkdir out && echo "<html><body>halla2</body></html>" >> out/index.html
 
