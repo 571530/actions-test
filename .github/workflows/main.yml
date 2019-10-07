@@ -10,12 +10,11 @@ jobs:
       uses: actions/checkout@master
 
     - name: Building and deployment
-      uses: 571530/actions-test@master
+      uses: JamesIves/github-pages-deploy-action@2.0.3
       env: 
         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
-        NO_JEKYLL: false
-        BUILD_SCRIPT: mkdir out && echo "<html><body>halla5</body></html>" >> out/index.html
+        BUILD_SCRIPT: mkdir out && echo "<html><body>halla5</body></html>" >> out/index.html && touch out/.nojekyll
 

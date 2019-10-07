@@ -1,6 +1,8 @@
 #!/bin/sh -l
 
 # Modified version of https://github.com/JamesIves/github-pages-deploy-action/blob/master/entrypoint.sh
+# Copies CNAME file if it exists
+# Creates a .nojekyll file if param set
 
 set -e
 
