@@ -16,6 +16,6 @@ jobs:
         BASE_BRANCH: master
         BRANCH: gh-pages
         FOLDER: out
-        NO_JEKYLL: true
+        NO_JEKYLL: false
         BUILD_SCRIPT: mkdir out && echo "<html><body>halla2</body></html>" >> out/index.html
 
